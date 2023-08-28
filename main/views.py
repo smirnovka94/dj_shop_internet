@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-def index(request):
+def home(request):
 
     return render(request, 'main/home.html')
 
-def result(request):
+def contacts(request):
     if request.method == "POST":
         name = request.POST.get('name')
         phone = request.POST.get('phone')
