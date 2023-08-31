@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from main.models import Сategory, Product
+from main.models import Category, Product
 
 
-@admin.register(Сategory)
+@admin.register(Category)
 class СategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name',)
     list_filter = ('name',)
