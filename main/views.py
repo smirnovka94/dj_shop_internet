@@ -1,8 +1,15 @@
 from django.shortcuts import render
 
-def home(request):
+from main.models import Product
 
-    return render(request, 'main/home.html')
+
+def home(request):
+    context = {
+        'object_list': Product.objects.all(),
+        'title': 'Skystore',
+        'title_comments': 'Skystore - это отличный вариант выбора товара на любой вкус!'
+    }
+    return render(request, 'main/home.html', context)
 
 def contacts(request):
     if request.method == "POST":
@@ -11,3 +18,11 @@ def contacts(request):
         message = request.POST.get('message')
         print(f'{name} ({phone}): {message}')
     return render(request, 'main/contacts.html')
+
+def product(request):
+
+    context = {
+        'object_list': Product.objects.all(),
+        'title': Product.objects.name
+    }
+    return render(request, 'main/product.html', context)

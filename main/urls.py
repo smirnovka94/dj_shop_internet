@@ -1,9 +1,13 @@
 from    django.urls import path
 
-from main.views import home, contacts
+from main.apps import MainConfig
+from main.views import home, contacts, product
+
+app_name = MainConfig.name
 
 urlpatterns = [
     path('', home, name='home'),
-    path('contacts/', contacts, name='contacts')
+    path('contacts/', contacts, name='contacts'),
+    path('product/', product, name='product'),
 ]
 
