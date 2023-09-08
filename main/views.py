@@ -22,10 +22,11 @@ def contacts(request):
 def product(request, pk):
     product_item = Product.objects.get(pk=pk)
     context = {
-        'object_list': Product.objects.filter(id=pk),
+        'object_list': Product.objects.get(pk=pk),
         'title': product_item.name
     }
     return render(request, 'main/product.html', context)
+
 
 # class product(DetailView):
 #     model = Product
