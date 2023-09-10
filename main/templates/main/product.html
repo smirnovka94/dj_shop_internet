@@ -6,18 +6,18 @@
         <div class="col-12">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">{{object_list.name}}</h4>
+                    <h3 class="my-0 font-weight-normal">{{object.name}}</h3>
+                    <h4 class="my-0 font-weight-normal">{{object.description}}</h4>
                 </div>
                 <img class="card-img-top"
-                    src="{{ object_list.image|mymedia }}"
+                    src="{{ object.image|mymedia }}"
                     alt="Card image cap">
                 </ul>
                 <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                    <li>{{object_list.description}}</li>
-                    <li>{{object_list.category}}</li>
+                    <li>{{object.category}}</li>
                 </ul>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">{{object_list.cost}} ₽</h1>
+                    <h1 class="card-title pricing-card-title">{{object.cost}} ₽</h1>
                     <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
                 </div>
             </div>

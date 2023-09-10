@@ -19,15 +19,18 @@ def contacts(request):
         print(f'{name} ({phone}): {message}')
     return render(request, 'main/contacts.html')
 
-def product(request, pk):
-    product_item = Product.objects.get(pk=pk)
-    context = {
-        'object_list': Product.objects.get(pk=pk),
-        'title': product_item.name
-    }
-    return render(request, 'main/product.html', context)
+# def product(request, pk):
+#     product_item = Product.objects.get(pk=pk)
+#     context = {
+#         'object_list': Product.objects.get(pk=pk),
+#         'title': product_item.name
+#     }
+#     return render(request, 'main/product.html', context)
 
+class ProductListView(ListView):
+    model = Product
+    template_name = 'main/home.html'
 
-# class product(DetailView):
-#     model = Product
-#     template_name = 'main/product.html'
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'main/product.html'
