@@ -9,7 +9,7 @@ class Blog(models.Model):
     create_data = models.DateField(verbose_name='Дата создания', **NULLABLE)
 
     is_published = models.BooleanField(default=True, verbose_name='Признак публикации', **NULLABLE)
-    count_view = models.IntegerField(default=0, verbose_name='Количество просмотров', **NULLABLE)
+    count_view = models.IntegerField(default=0, verbose_name='Количество просмотров')
     slug = models.CharField(max_length=150, verbose_name='slug', **NULLABLE)
 
 

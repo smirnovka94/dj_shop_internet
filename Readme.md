@@ -15,3 +15,5 @@ pip install -r requirements.txt
 создаем файл .pgpass
 чтобы указать в нем пароль от Postgres вконце
 localhost:5432:shop_internet:postgres:<password>
+
+Загрузить бузу данных из afqlf fill
