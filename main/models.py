@@ -29,3 +29,18 @@ class Product(models.Model):
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
 
+class Version(models.Model):
+    version_number = models.IntegerField(verbose_name='Номер версии', unique=True)
+    version_name = models.CharField(max_length=100, verbose_name='Название версии')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+
+
+    is_active = models.BooleanField(default=True, verbose_name='Активная версия')
+
+
+    def __str__(self):
+        return f'{self.version_number} ({self.product}, {self.version_name})'
+
+    class Meta:
+        verbose_name = 'Версию'
+        verbose_name_plural = 'Версии'
