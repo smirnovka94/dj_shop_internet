@@ -1,9 +1,15 @@
 from django import forms
 
-from main.models import Product
+from main.models import Product, Version
 
+class StyleForMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
-class ProductForm(forms.ModelForm):
+class ProductForm(StyleForMixin, forms.ModelForm):
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -23,3 +29,8 @@ class ProductForm(forms.ModelForm):
             raise forms.ValidationError('Товар с таким описанием запрещен')
 
         return cleaned_data
+
+class VersionForm(StyleForMixin, forms.ModelForm):
+    class Meta:
+        model = Version
+        fields = '__all__'
