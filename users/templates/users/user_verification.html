@@ -9,7 +9,8 @@
     <form method="post" action="" class="form-floating">
         {% csrf_token %}
         <div class="form-group">
-            <label for="key_post">Код подтверждения:</label>
+            <label for="key_post">Код подтверждения:</label><br>
+            <label class="btn btn-danger">{{error_message}}</label>
             <input type="text" id="key_post" name="key_post" class="form-control" placeholder="Ключ из письма" required>
         </div>
         <button type="submit" class="btn btn-success">Отправить</button>

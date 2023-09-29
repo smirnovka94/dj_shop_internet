@@ -1,7 +1,7 @@
 from django.urls import path
 
 from users.apps import UsersConfig
-from users.views import LoginView, LogoutView, RegisterView, UserVerificationView
+from users.views import LoginView, LogoutView, RegisterView, UserVerificationView, delete_user, MyView
 
 app_name = UsersConfig.name
 
@@ -10,6 +10,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
     path('verification/', UserVerificationView.as_view(), name='verification'),
-    # path('reset_password/', UserPasswordResetView.as_view(), name='reset_password'),
+    path('resert/', delete, name='resert'),
 ]
 
