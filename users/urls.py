@@ -1,7 +1,7 @@
 from django.urls import path
 
 from users.apps import UsersConfig
-from users.views import LoginView, LogoutView, RegisterView, UserVerificationView, delete_user, MyView
+from users.views import LoginView, LogoutView, RegisterView, UserVerificationView, delete
 
 app_name = UsersConfig.name
 
